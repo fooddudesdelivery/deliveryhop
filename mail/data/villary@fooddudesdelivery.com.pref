@@ -1,0 +1,9 @@
+show_html_default=0
+javascript_on=1
+hililist=a:0:{}
+security_tokens=a:5:{s:12:"XTgxL7luUSuF";i:1584467653;s:12:"GHImq9kZWjEs";i:1584467653;s:12:"g6xMn8IIontV";i:1584467662;s:12:"h0rCDg2hWLzm";i:1584467664;s:12:"W2sGQI4egKN0";i:1584467665;}
+timezone=US/Central
+sort=0
+chosen_theme=../themes/turquoise.php
+custom_css=verdana-12.css
+attachment_common_show_images=1

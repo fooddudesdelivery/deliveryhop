@@ -1,0 +1,62 @@
+Return-Path: <service@staging.fooddudesdelivery.com>
+Received: from host.staging.fooddudesdelivery.com
+	by host.staging.fooddudesdelivery.com with LMTP
+	id +OTbAK3cqV1/dwAAR1GdXg
+	(envelope-from <service@staging.fooddudesdelivery.com>); Fri, 18 Oct 2019 10:39:25 -0500
+Return-path: <service@staging.fooddudesdelivery.com>
+Envelope-to: brainerd@staging.fooddudesdelivery.com
+Delivery-date: Fri, 18 Oct 2019 10:39:25 -0500
+Received: from [72.52.202.23] (port=32882 helo=localhost)
+	by host.staging.fooddudesdelivery.com with esmtp (Exim 4.92)
+	(envelope-from <service@staging.fooddudesdelivery.com>)
+	id 1iLULc-000844-Vw
+	for brainerd@staging.fooddudesdelivery.com; Fri, 18 Oct 2019 10:39:25 -0500
+Content-Type: multipart/alternative;
+ boundary="=_368ee08d2f1ad16bb12673f94b141209"
+MIME-Version: 1.0
+From: "Service" <service@staging.fooddudesdelivery.com>
+To: "Brainerd" <brainerd@staging.fooddudesdelivery.com>
+Subject: Re: Driver Application [#762709]
+Date: Fri, 18 Oct 2019 15:39:24 +0000
+Message-ID: <B5VK6iu-MECWo-rCIAAFpKAgBzGgEAVbQJ2kOU-service@staging.fooddudesdelivery.com>
+X-Mailer: osTicket Mailer
+
+--=_368ee08d2f1ad16bb12673f94b141209
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset=utf-8
+
+LS0gcmVwbHkgYWJvdmUgdGhpcyBsaW5lIC0tCkhpIEJyYWluZXJkLAoKRmlyc3QgTmFtZTogRGF2
+aWQKTGFzdCBOYW1lOiBTY2h3YW5rZQpQaG9uZSBOdW1lcjogMjE4MzU1ODM2NwpFbWFpbCBBZGRy
+ZXNzOiBkYXZpZHNjaHdhbmtlNzZAZ21haWwuY29tIDxkzLJhzLJ2zLJpzLJkzLJzzLJjzLJozLJ3
+zLJhzLJuzLJrzLJlzLI3zLI2zLJAZ23MsmHMsmnMsmzMsi5jzLJvzLJtzLI+CkNpdHk6IEJyYWlu
+ZXJkCkNvbW1lbnRzOiBJIGFtIGV4Y2l0ZWQgdG8gZ2V0IG9uIHRoZSByb2FkISBJIGJhcnRlbmQg
+ZnVsbCB0aW1lIGluIHRoZSBzdW1tZXIgYnV0IGZpbmQKbXlzZWxmIHdpdGggbG90cyBvZiBmcmVl
+IHRpbWUgaW4gdGhlIG9mZiBzZWFzb24uIEkgdGhpbmsgdGhpcyB3aWxsIHdvcmsgbmljZWx5ISAK
+Ci0tCkZvb2QgRHVkZXMgRGVsaXZlcnkKKDgwMCkgNTk5LTU3NzAgVGVsCig4MDApIDU5OS0yOTc0
+IEZheApzZXJ2aWNlQGZvb2RkdWRlc2RlbGl2ZXJ5LmNvbQpSZWYtTWlkOiBCNVZLNml1LU1FQ1dv
+LXJDSUFBRnBLQWdCekdnRUFWYlFKMmtPVS1zZXJ2aWNlQGZvb2RkdWRlc2RlbGl2ZXJ5LmNvbQo=
+--=_368ee08d2f1ad16bb12673f94b141209
+Content-Transfer-Encoding: base64
+Content-Type: text/html; charset=utf-8
+
+PGRpdiBzdHlsZT0iZGlzcGxheTpub25lIgogICAgICAgICAgICAgICAgICAgICAgICBjbGFzcz0i
+bWlkLUI1Vks2aXUtTUVDV28tckNJQUFGcEtBZ0J6R2dFQVZiUUoya09VLXNlcnZpY2VAZm9vZGR1
+ZGVzZGVsaXZlcnkuY29tIj4tLSByZXBseSBhYm92ZSB0aGlzIGxpbmUgLS08YnIvPjxici8+PC9k
+aXY+IDxzcGFuIHN0eWxlPSJmb250LWZhbWlseTpIZWx2ZXRpY2EiPjxzcGFuIHN0eWxlPSJmb250
+LWZhbWlseTpIZWx2ZXRpY2EiPjxzcGFuIHN0eWxlPSJjb2xvcjpyZ2IoMCwgMCwgMCkiPkhpIEJy
+YWluZXJkLDxiciAvPjxiciAvPkZpcnN0IE5hbWU6IERhdmlkPGJyIC8+TGFzdCBOYW1lOiBTY2h3
+YW5rZTxiciAvPlBob25lIE51bWVyOiAyMTgzNTU4MzY3PGJyIC8+RW1haWwgQWRkcmVzczogPGEg
+aHJlZj0ibWFpbHRvOmRhdmlkc2Nod2Fua2U3NkBnbWFpbC5jb20iIHRhcmdldD0iX2JsYW5rIj5k
+YXZpZHNjaHdhbmtlNzZAZ21haWwuY29tPC9hPjxiciAvPkNpdHk6IEJyYWluZXJkPGJyIC8+Q29t
+bWVudHM6IEkgYW0gZXhjaXRlZCB0byBnZXQgb24gdGhlIHJvYWQhIEkgYmFydGVuZCBmdWxsIHRp
+bWUgaW4gdGhlIHN1bW1lciBidXQgZmluZCBteXNlbGYgd2l0aCBsb3RzIG9mIGZyZWUgdGltZSBp
+biB0aGUgb2ZmIHNlYXNvbi4gSSB0aGluayB0aGlzIHdpbGwgd29yayBuaWNlbHkhIDxiciAvPjxi
+ciAvPjwvc3Bhbj48L3NwYW4+PC9zcGFuPjxkaXYgc3R5bGU9ImNvbG9yOnJnYigxMjcsIDEyNywg
+MTI3KSI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OkhlbHZldGljYSI+PHNwYW4gc3R5bGU9ImZv
+bnQtZmFtaWx5OkhlbHZldGljYSI+PHNwYW4gc3R5bGU9ImNvbG9yOnJnYigwLCAwLCAwKSI+PGJy
+IC8+LS08YnIgLz5Gb29kIER1ZGVzIERlbGl2ZXJ5PGJyIC8+KDgwMCkgNTk5LTU3NzAgVGVsPGJy
+IC8+KDgwMCkgNTk5LTI5NzQgRmF4PGJyIC8+c2VydmljZUBmb29kZHVkZXNkZWxpdmVyeS5jb208
+YnIgLz48L3NwYW4+PC9zcGFuPjwvc3Bhbj48L2Rpdj4g
+--=_368ee08d2f1ad16bb12673f94b141209--
+
+

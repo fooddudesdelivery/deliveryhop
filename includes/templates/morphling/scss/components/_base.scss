@@ -1,0 +1,348 @@
+.fec-container {
+	padding:0 16px 15px 15px;
+	@include box-sizing(border-box);
+}
+
+.fec-page-step {
+	color: $red;
+	display: block;
+	font-size: $large;
+	line-height: normal;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+.fec-container .fec-required {
+	color: $red;
+	display: block;
+	font-size: $small;
+	font-weight: 700;
+	margin-bottom: 20px;
+	margin-top: -35px;
+	text-align: right;
+}
+
+.fec-container .fec-information {
+	display: block;
+	font-size: $small;
+	line-height: 18px;
+	margin-bottom: 17px;
+}
+
+.fec-container form {
+	display: block;
+	margin: -18px 0 0;
+	overflow: hidden;
+}
+
+.fec-fieldset {
+	background: $lightest-gray;
+	border: 1px solid $lighter-gray;
+	border-top: none;
+	padding: 0 23px 21px;
+}
+
+.fec-guest-checkout {
+	margin-top: 10px;
+}
+
+.fec-fieldset .fec-fieldset-legend {
+	background: #252525;
+	color: $white;
+	display: block;
+	font-size: $medium;
+	font-weight: 700;
+	margin: 0 -24px 17px;
+	padding: 13px 23px 15px;
+	position: relative;
+	text-transform: uppercase;
+}
+
+.fec-fieldset .information {
+	font-size: $small;
+	padding: 0;
+}
+
+.fec-fieldset .fec-box-check-radio .alert {
+	float: left;
+	height: 13px;
+	line-height: 13px;
+}
+
+.fec-fieldset .alert {
+	color: $red;
+	display: inline-block;
+	font-size: $small;
+	font-weight: 400;
+	margin-left: 0;
+}
+
+.fec-fieldset fieldset {
+	border: none;
+	display: block;
+	margin: 18px 0 0;
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+	@include box-sizing(border-box);
+}
+
+.fec-col-left .fec-fieldset fieldset {
+	margin-bottom: -14px!important;
+}
+
+.fec-fieldset fieldset .fec-fieldset-legend,
+.fec-fieldset .fec-fieldset-legend-two {
+	background: none;
+	border: none;
+	color: $red;
+	display: block;
+	font-size: $small;
+	font-weight: 700;
+	height: auto;
+	line-height: normal;
+	margin: 0 0 12px;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+.fec-fieldset .fec-newsletter-email,
+.fec-fieldset .fec-referral,
+.fec-fieldset .fec-login-details {
+	border-top: 1px solid $lighter-gray;
+	margin-bottom: 0;
+	padding: 18px 0 0;
+}
+
+.fec-col-left .fec-fieldset .fec-referral {
+	margin: 26px 0 -14px;
+}
+
+.fec-fieldset .fec-discount,
+.fec-fieldset .fec-table-gifts {
+	border-top: 1px solid $lighter-gray;
+	padding-top: 20px;
+}
+
+.fec-fieldset > div .fec-discount:first-child {
+	border-top: none;
+	padding-top: 0;
+}
+
+.fec-fieldset .fec-shipping-to {
+	border-bottom: 1px solid $lighter-gray;
+	margin-bottom: 17px;
+	padding-bottom: 21px;
+}
+
+.fec-address-container {
+	margin-top: -5px;
+	overflow: hidden;
+	position: relative;
+}
+
+.fec-shipping-address address {
+	color: $black;
+	float: left;
+	font-size: $small;
+	line-height: 18px;
+	padding: 0;
+}
+
+.fec-shipping-address address br {
+	display: block;
+}
+
+.fec-shipping-address a {
+	bottom: 2px;
+	position: absolute;
+	right: 0;
+	text-transform: uppercase;
+}
+
+.fec-table-items table {
+	background: none!important;
+	border: none!important;
+	border-collapse: collapse;
+	border-spacing: 1px;
+	margin-top: -7px;
+	width: 100%;
+	@include box-shadow(1px 1px 5px $lightest-gray);
+}
+
+.fec-table-items tr {
+	background: no-repeat!important;
+}
+
+.fec-table-items table th {
+	background: $dark-gray;
+	border-left: 1px solid $lighter-gray;
+	color: $white;
+	display: none;
+	font-size: $small;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+}
+
+.fec-table-items table th:first-child {
+	border-left: none;
+}
+
+.fec-table-items table #ccProductsHeading {
+	text-align: left;
+}
+
+.fec-table-items table td {
+	border-bottom: 1px solid $lighter-gray !important;
+	color: $black;
+	font-size: $small;
+	padding: 12px 0!important;
+}
+
+.fec-table-items table td:first-child {
+	border-left: medium none;
+	text-align: center;
+	width: 7%;
+}
+
+.fec-table-items table .cartImage {
+	text-align: center;
+	width: 20%;
+}
+
+.fec-table-items table .cartAttribsList {
+	margin: 6px 0;
+	padding-left: 14px;
+}
+
+#orderTotals {
+	position: relative;
+	z-index: 1;
+}
+
+#orderTotals > div {
+	overflow: hidden;
+}
+
+#orderTotals > div > div {
+	color: $black;
+	font-size: $small;
+	padding: 10px 0 0;
+	@include box-sizing(border-box);
+}
+
+#orderTotals > div .totalBox {
+	text-align: right;
+	width: 20%;
+}
+
+#orderTotals > div .lineTitle {
+	width: 80%;
+}
+
+#orderTotals #ottotal div {
+	font-weight: 700;
+}
+
+.fec-container .fec-important a {
+	color: $red;
+	display: block;
+	font-size: $small;
+	margin: 14px 0;
+	text-align: right;
+}
+
+.fec-container .fec-important a:hover {
+	color: $dark-red;
+}
+
+.fec-easy-sing-up.no-account-only {
+	margin-top: 22px;
+}
+
+.fec-easy-sing-up .fec-col-left {
+	float: left;
+	width: 63.510204081633%;
+}
+
+.fec-easy-sing-up .fec-col-left.no-account {
+	float: left;
+	width: 100%;
+}
+
+.fec-easy-sing-up .fec-col-right {
+	float: right;
+	width: 33.5%;
+}
+
+.fec-cl-left,.fec-cl-right {
+	float: left;
+	margin-top: 21px;
+	overflow: hidden;
+	width: auto;
+}
+
+.fec-cl-left {
+	border-right: 1px solid $lighter-gray;
+	margin-right: 5%;
+	padding-right: 5%;
+	width: 50%;
+	@include box-sizing(border-box);
+}
+
+.fec-cl-right {
+	width: 45%;
+}
+
+.fec-fieldset .fec-company,
+.fec-fieldset .fec-privacy {
+	padding-bottom: 14px;
+}
+
+.fec-fieldset .fec-login-details {
+	margin-top: -19px;
+}
+
+.fec-col-left #shippingField {
+	margin-bottom: 30px !important;
+	margin-top: 0 !important;
+}
+
+.fec-no-account,.fec-confidence,
+.fec-paypal {
+	margin-bottom: 20px;
+}
+
+#checkout .fec-container,
+.fec-container .fec-information p {
+	padding: 0;
+}
+
+.fec-fieldset br,
+.fec-fieldset legend,
+#fec-state-2-field,
+#fec-state-2-field-shipping,
+#fec-state-2-field label,
+#fec-state-2-field-shipping label {
+	display: none;
+}
+
+.fec-button-container .buttonRow.forward,
+.fec-fieldset .fec-billing-address,
+.fec-fieldset .fec-company,
+.fec-fieldset .fec-date-birth,
+.fec-fieldset .fec-privacy {
+	margin-top: 0;
+}
+
+.fec-shopping-cart-fieldset {
+	
+	margin: 0 0 21px;
+
+		.fec-shopping-cart {
+			clear: both;
+			padding: 6px 0 0;
+			border-top: 1px solid $lighter-gray;
+		}
+}

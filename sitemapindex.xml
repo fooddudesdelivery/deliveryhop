@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/includes/templates/template_default/css/gss.xsl"?>
+<sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- generator="Zen-Cart SitemapXML" 3.9.5 -->
+<!-- sitemapindex.xml created at 2019-01-04 02:50:47 -->
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapcategories.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapcategories000.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapmainpage.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapmanufacturers.xml</loc>
+  <lastmod>2018-12-06</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapproducts.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapproducts000.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapproducts001.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapproducts002.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapproducts003.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapproducts004.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapproducts005.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://staging.fooddudesdelivery.com/sitemapproducts006.xml</loc>
+  <lastmod>2019-01-04</lastmod>
+ </sitemap>
+</sitemapindex>

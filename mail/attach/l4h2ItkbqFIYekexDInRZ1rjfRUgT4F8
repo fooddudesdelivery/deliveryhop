@@ -1,0 +1,22 @@
+Return-path: <asolano@FoodDudesDelivery.com>
+Received: from [72.52.202.74] (port=35666 helo=staging.fooddudesdelivery.com)
+	by server.staging.fooddudesdelivery.com with esmtp (Exim 4.89)
+	(envelope-from <asolano@FoodDudesDelivery.com>)
+	id 1doIfE-0000ZC-7m
+	for Charlie@RockfordLinos.com; Sat, 02 Sep 2017 19:21:24 -0500
+Received: from 67.184.158.52
+        (SquirrelMail authenticated user asolano@FoodDudesDelivery.com)
+        by staging.fooddudesdelivery.com with HTTP;
+        Sun, 3 Sep 2017 00:21:24 -0000
+Message-ID: <757f6168b0361b4f36e6b463edaa096d.squirrel@staging.fooddudesdelivery.com>
+Date: Sun, 3 Sep 2017 00:21:24 -0000
+Subject: Lino's Restaurant and Food Dudes Delivery
+From: asolano@FoodDudesDelivery.com
+To: Charlie@RockfordLinos.com
+User-Agent: SquirrelMail/1.4.22
+MIME-Version: 1.0
+Content-Type: multipart/mixed;boundary="----=_20170903002124_32491"
+X-Priority: 3 (Normal)
+Importance: Normal
+X-Exim-DSN-Information: Due to administrative limits only headers are returned
+

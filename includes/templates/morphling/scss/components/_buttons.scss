@@ -1,0 +1,84 @@
+.fec-shipping-address a .cssButton,
+.fec-shipping-address a .cssButtonHover,
+#cartWrapExplain a {
+	background: none!important;
+	border: none;
+	color: $dark-gray;
+	font-size: $smaller;
+	font-weight: 700;
+	padding: 0 !important;
+	width: auto !important;
+}
+
+.fec-shipping-address a .cssButton:hover,
+.fec-shipping-address a .cssButtonHover:hover,
+#cartWrapExplain a:hover {
+	color: $darker-gray;
+}
+
+.fec-fieldset .fec-edit-button {
+	margin: -52px 0 0;
+	position: relative;
+}
+
+.fec-fieldset .fec-edit-button .cssButton,
+.fec-fieldset .fec-edit-button .cssButtonHover {
+	background: $medium-gray;
+	cursor: pointer;
+	padding: 3px 4px 4px;
+}
+
+.fec-fieldset .fec-edit-button .cssButtonHover,
+.fec-fieldset .fec-edit-button .cssButtonHover:hover {
+	background: $dark-gray;
+}
+
+.fec-container .buttonRow.forward {
+	margin-bottom: 0;
+	margin-right: 0;
+}
+
+.fec-col-left .buttonRow.forward {
+	border-top: 1px solid $lighter-gray;
+	margin: 21px 0 0;
+	padding-top: 21px;
+	width: 45%;
+}
+
+.fec-container .cssButton,.fec-container .cssButtonHover {
+	background: $red;
+	border: none;
+	color: $white;
+	cursor: pointer;
+	float: right;
+	font-size: $small;
+	font-weight: 700;
+	margin: 0;
+	padding: 4px 6px 5px;
+	text-transform: uppercase;
+	width: auto !important;
+}
+
+.fec-container .cssButtonHover,
+.fec-container .cssButtonHover:hover {
+	background: $dark-red;
+	border-color: none;
+}
+
+.fec-button-container .fec-infomation {
+	clear: both;
+	font-size: $small;
+	padding-top: 10px;
+	text-align: right;
+}
+
+.fec-shopping-cart-btn {
+	margin: 0 0 15px !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.fec-container .cssButton,
+	.fec-container .cssButtonHover {
+		padding: 6px 7px;
+	}
+}

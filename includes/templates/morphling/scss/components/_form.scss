@@ -1,0 +1,102 @@
+.fec-fieldset .inputLabel {
+	color: $black;
+	display: block;
+	float: none;
+	font-size: $normal;
+	font-weight: 700;
+	line-height: 11px;
+	margin: 0 0 9px;
+	padding: 0;
+	width:auto;
+}
+
+.fec-fieldset input[type=text],
+.fec-fieldset input[type=password],
+.fec-fieldset select,
+.fec-fieldset textarea {
+	border: 1px solid #898989;
+	display: inline-block;
+	font-family: Verdana;
+	font-size: $normal;
+	margin: 0;
+	padding: 5px;
+	width: 100%;
+	@include box-sizing(border-box);
+}
+
+.fec-returning-customers input[type=text],
+.fec-returning-customers input[type=password],
+.fec-returning-customers select,
+.fec-returning-customers textarea {
+	width: 100%;
+}
+
+.fec-fieldset input:focus,
+.fec-fieldset select:focus,
+.fec-fieldset textarea:focus {
+	background-color: $white;
+	border-color: $gray;
+	@include box-shadow(1px 1px 3px #CCC);
+}
+
+.fec-box-check-radio,
+.fec-discount .fec-field-inline label {
+	margin-bottom: 12px;
+	overflow: hidden;
+}
+
+.fec-box-check-radio input,
+.fec-box-check-radio label {
+	float: left;
+	margin: 0 10px 0 0;
+	padding: 0;
+	width: auto;
+}
+
+.fec-box-check-radio label,
+.fec-discount .fec-field-inline label {
+	float: left;
+	font-size: $normal;
+	line-height: 19px;
+	margin-right: 0;
+	position: relative;
+	top: -2px;
+	width: 83%;
+}
+
+.fec-fieldset .fec-field {
+	margin-bottom: 14px;
+	overflow: hidden;
+}
+
+.fec-box-check-radio label img {
+	margin: 2px 0 5px;
+	position: relative;
+}
+
+.fec-box-check-radio .smallText {
+	display: block;
+	font-weight: 400;
+}
+
+.fec-box-check-radio input {
+	height: 13px;
+	margin: 1px 9px 0 0;
+	width: 13px;
+}
+
+.fec-fieldset .fec-newsletter-email {
+	margin-top: 21px;
+}
+
+.fec-newsletter-email .fec-box-check-radio {
+	margin-bottom: 0;
+}
+
+.fec-newsletter-email input {
+	clear: left;
+}
+
+.fec-newsletter-email label {
+	padding-bottom: 8px;
+}

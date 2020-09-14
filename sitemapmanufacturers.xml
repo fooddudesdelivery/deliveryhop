@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/includes/templates/template_default/css/gss.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- generator="Zen-Cart SitemapXML" 3.9.5 -->
+<!-- sitemapmanufacturers.xml created at 2018-12-06 04:06:36 -->
+ <url>
+  <loc>https://staging.fooddudesdelivery.com/index.php?main_page=index&amp;manufacturers_id=110</loc>
+  <lastmod>2015-07-21</lastmod>
+  <priority>1.00</priority>
+ </url>
+ <url>
+  <loc>https://staging.fooddudesdelivery.com/index.php?main_page=index&amp;manufacturers_id=111</loc>
+  <lastmod>2015-07-21</lastmod>
+  <priority>0.83</priority>
+ </url>
+ <url>
+  <loc>https://staging.fooddudesdelivery.com/index.php?main_page=index&amp;manufacturers_id=112</loc>
+  <lastmod>2015-07-21</lastmod>
+  <priority>0.67</priority>
+ </url>
+ <url>
+  <loc>https://staging.fooddudesdelivery.com/index.php?main_page=index&amp;manufacturers_id=109</loc>
+  <lastmod>2015-07-21</lastmod>
+  <priority>0.50</priority>
+ </url>
+ <url>
+  <loc>https://staging.fooddudesdelivery.com/index.php?main_page=index&amp;manufacturers_id=3</loc>
+  <lastmod>2015-04-05</lastmod>
+  <priority>0.33</priority>
+ </url>
+ <url>
+  <loc>https://staging.fooddudesdelivery.com/index.php?main_page=index&amp;manufacturers_id=114</loc>
+  <priority>0.17</priority>
+ </url>
+</urlset>

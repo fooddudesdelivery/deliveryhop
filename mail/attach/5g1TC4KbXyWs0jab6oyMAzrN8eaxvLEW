@@ -1,0 +1,5 @@
+Reporting-MTA: dns; server.staging.fooddudesdelivery.com
+
+Action: failed
+Final-Recipient: rfc822;Charlie@RockfordLinos.com
+Status: 5.0.0

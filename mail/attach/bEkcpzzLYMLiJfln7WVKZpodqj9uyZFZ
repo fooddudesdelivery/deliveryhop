@@ -1,0 +1,54 @@
+Return-Path: <service@staging.fooddudesdelivery.com>
+Received: from host.staging.fooddudesdelivery.com
+	by host.staging.fooddudesdelivery.com with LMTP
+	id bcH4BVvyvl3OHAAAR1GdXg
+	(envelope-from <service@staging.fooddudesdelivery.com>); Sun, 03 Nov 2019 09:29:31 -0600
+Return-path: <service@staging.fooddudesdelivery.com>
+Envelope-to: brainerd@staging.fooddudesdelivery.com
+Delivery-date: Sun, 03 Nov 2019 09:29:31 -0600
+Received: from [72.52.202.23] (port=60310 helo=localhost)
+	by host.staging.fooddudesdelivery.com with esmtp (Exim 4.92)
+	(envelope-from <service@staging.fooddudesdelivery.com>)
+	id 1iRHop-0001ur-2C
+	for brainerd@staging.fooddudesdelivery.com; Sun, 03 Nov 2019 09:29:31 -0600
+To: "Brainerd" <brainerd@staging.fooddudesdelivery.com>
+Content-Type: multipart/alternative;
+ boundary="=_649fa914f8685af99701c2955b52fc2d"
+MIME-Version: 1.0
+From: "Service" <service@staging.fooddudesdelivery.com>
+Subject: Re: Driver Application [#242703]
+Date: Sun, 03 Nov 2019 15:29:31 +0000
+Message-ID: <B5VK6iu-=15rt-AAAAAL1SAgCWHgEATSUXPssX-service@staging.fooddudesdelivery.com>
+X-Mailer: osTicket Mailer
+
+--=_649fa914f8685af99701c2955b52fc2d
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset=utf-8
+
+LS0gcmVwbHkgYWJvdmUgdGhpcyBsaW5lIC0tCkhpIEJyYWluZXJkLAoKRmlyc3QgTmFtZTogTG9y
+aQpMYXN0IE5hbWU6IFRocmFtZXIKUGhvbmUgTnVtZXI6IDIxODgyMDc1OTEKRW1haWwgQWRkcmVz
+czogU2VjcmV0c2hvcHBlcjAwQG91dGxvb2suY29tCkNpdHk6IEJyYWluZXJkCkNvbW1lbnRzOiAK
+Ci0tCkZvb2QgRHVkZXMgRGVsaXZlcnkKKDgwMCkgNTk5LTU3NzAgVGVsCig4MDApIDU5OS0yOTc0
+IEZheApzZXJ2aWNlQGZvb2RkdWRlc2RlbGl2ZXJ5LmNvbQpSZWYtTWlkOiBCNVZLNml1LT0xNXJ0
+LUFBQUFBTDFTQWdDV0hnRUFUU1VYUHNzWC1zZXJ2aWNlQGZvb2RkdWRlc2RlbGl2ZXJ5LmNvbQo=
+--=_649fa914f8685af99701c2955b52fc2d
+Content-Transfer-Encoding: base64
+Content-Type: text/html; charset=utf-8
+
+PGRpdiBzdHlsZT0iZGlzcGxheTpub25lIgogICAgICAgICAgICAgICAgICAgICAgICBjbGFzcz0i
+bWlkLUI1Vks2aXUtPTE1cnQtQUFBQUFMMVNBZ0NXSGdFQVRTVVhQc3NYLXNlcnZpY2VAZm9vZGR1
+ZGVzZGVsaXZlcnkuY29tIj4tLSByZXBseSBhYm92ZSB0aGlzIGxpbmUgLS08YnIvPjxici8+PC9k
+aXY+IDxzcGFuIHN0eWxlPSJmb250LWZhbWlseTpIZWx2ZXRpY2EiPjxzcGFuIHN0eWxlPSJmb250
+LWZhbWlseTpIZWx2ZXRpY2EiPjxzcGFuIHN0eWxlPSJjb2xvcjpyZ2IoMCwgMCwgMCkiPkhpIEJy
+YWluZXJkLDxiciAvPjxiciAvPkZpcnN0IE5hbWU6IExvcmk8YnIgLz5MYXN0IE5hbWU6IFRocmFt
+ZXI8YnIgLz5QaG9uZSBOdW1lcjogMjE4ODIwNzU5MTxiciAvPkVtYWlsIEFkZHJlc3M6IFNlY3Jl
+dHNob3BwZXIwMEBvdXRsb29rLmNvbTxiciAvPkNpdHk6IEJyYWluZXJkPGJyIC8+Q29tbWVudHM6
+IDxiciAvPjxiciAvPjwvc3Bhbj48L3NwYW4+PC9zcGFuPjxkaXYgc3R5bGU9ImNvbG9yOnJnYigx
+MjcsIDEyNywgMTI3KSI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OkhlbHZldGljYSI+PHNwYW4g
+c3R5bGU9ImZvbnQtZmFtaWx5OkhlbHZldGljYSI+PHNwYW4gc3R5bGU9ImNvbG9yOnJnYigwLCAw
+LCAwKSI+PGJyIC8+LS08YnIgLz5Gb29kIER1ZGVzIERlbGl2ZXJ5PGJyIC8+KDgwMCkgNTk5LTU3
+NzAgVGVsPGJyIC8+KDgwMCkgNTk5LTI5NzQgRmF4PGJyIC8+c2VydmljZUBmb29kZHVkZXNkZWxp
+dmVyeS5jb208YnIgLz48L3NwYW4+PC9zcGFuPjwvc3Bhbj48L2Rpdj4g
+--=_649fa914f8685af99701c2955b52fc2d--
+
+
