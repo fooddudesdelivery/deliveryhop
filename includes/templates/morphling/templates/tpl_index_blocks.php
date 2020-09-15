@@ -99,7 +99,7 @@ if(is_array($blocks['block_contents'])){
 							<div class="section-header <?php echo $key.'_sec' ?>">
 								<?php
 								if($value['title'][$_SESSION['languages_id']]!=''){ ?>
-									<h1 class="<?php echo $key.'_head' ?>featured_title"><?php echo zen_decode_specialchars($value['title'][$_SESSION['languages_id']]); ?></h1>
+									<h1 class="<?php echo $key.'_head' ?> featured_title"><?php echo zen_decode_specialchars($value['title'][$_SESSION['languages_id']]); ?></h1>
 								<?php } ?>
 								<?php
 								if($value['subtitle'][$_SESSION['languages_id']] != ''){

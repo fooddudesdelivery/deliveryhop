@@ -72,4 +72,11 @@ define('_DOMAIN_TEXT_UNREACHABLE', 'staging.fooddudesdelivery is unreachable');
 define('_SALES_REPORT_EMAIL_ADDRESS', _DOMAIN_TEXT_EMAIL_ADDRESS_1);
 define('_SALES_REPORT_EMAIL_SUBJECT', 'CSV Sales Report');
 define('_SALES_REPORT_NO_REPLY_EMAIL', _NO_REPLY_2);
+
+/**
+ * ReCaptcha V2
+ * Localhost: fddevs@gmail.com Abc@1234
+ */
+define('_RECAPTCHA_SITE_KEY', '6LfDmcwZAAAAAJERAx62vlwSzl8uMPZtGPc6CsPS');
+define('_RECAPTCHA_SECRET_KEY', '6LfDmcwZAAAAABNzwzeH2D9XdmqomE-G3Lte6ZH2');
 ?>
