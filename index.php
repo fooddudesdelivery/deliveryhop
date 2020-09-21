@@ -21,16 +21,14 @@
 	 * @version $Id: index.php 2942 2006-02-02 04:41:23Z drbyte $
 	 */
 
+	ini_set('display_errors',true);
+	ini_set('memory_limit', '-1');
+	ini_set("log_errors", 1);
+	error_reporting(E_ALL);
+
 	/**
 	 * Load common library stuff 
 	 */
-	// if($_GET['main_page']=="applogin"){
-		// require('includes/modules/pages/applogin/header_php.php');
-	// }
-
-	// if($_SERVER["HTTPS"]!="on"){
-		// header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);exit();
-	// }
 	require('db_config.php');
 
 	$sub = explode(".",$_SERVER['HTTP_HOST']);
@@ -41,11 +39,8 @@
 	}
 	require('includes/application_top.php');
 
-	//echo 'Signup';
 	$language_page_directory = DIR_WS_LANGUAGES . $_SESSION['language'] . '/';
-	//echo $language_page_directory;
 	$directory_array = $template->get_template_part($code_page_directory, '/^header_php/');
-	//print_r($directory_array); exit;
 	foreach($directory_array as $value){
 		/**
 		 * We now load header code for a given page. 
@@ -54,8 +49,7 @@
 		 */
 		require($code_page_directory . '/' . $value);
 	}
-	//exit;
-	//echo _DB_SERVER; exit;
+
 	/**
 	 * We now load the html_header.php file. This file contains code that would appear within the HTML <head></head> code 
 	 * it is overridable on a template and page basis. 

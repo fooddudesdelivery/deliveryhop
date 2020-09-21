@@ -9,6 +9,7 @@
 <?php
 $data_blocks = pt_get_framework_config('PT_HOME_BLOCKS');
 $blocks = pt_parse_framework_config($data_blocks);
+//echo base64_encode('<h3>Choose your own hours and make great money!</h3><a href="index.php?main_page=driver"><span class="btn button-default">Apply Now</span></a>'); exit;
 
 if(is_array($blocks['block_contents'])){
 	foreach($blocks['block_contents'] as $key=>$value){
@@ -35,49 +36,14 @@ if(is_array($blocks['block_contents'])){
 					<div class="col-md-8 col-md-offset-2">
 						<div class="locations_head">Locations</div>
 						<div class="col-md-3 state_block">
-						<div class="state_head">Colorado</div>
-							<div class="city_head"><a href="grandjunction">Grand Junction</a></div>
-							<div class="city_head"><a href="montrose">Montrose</a></div>
-						</div>
-						<div class="col-md-3 state_block">
-						<div class="state_head">Iowa</div>
-							<div class="city_head"><a href="desmoines">Des Moines</a></div>
-							<div class="city_head"><a href="siouxcity">Sioux City</a></div>
-						</div>
-						<div class="col-md-3 state_block">
-						<div class="state_head">North Dakota</div>
-							<div class="city_head"><a href="bismarck">Bismarck</a></div>
-							<div class="city_head"><a href="fargo">Fargo</a></div>
-							<div class="city_head"><a href="grandforks">Grand Forks</a></div>
-							<div class="city_head"><a href="minot">Minot</a></div>
-						</div>
-						<div class="col-md-3 state_block">
-						<div class="state_head">South Dakota</div>
-							<div class="city_head"><a href="rapidcity">Rapid City</a></div>
-							<div class="city_head"><a href="siouxfalls">Sioux Falls</a></div>
-						</div>
-						<div class="col-md-3 state_block">
-						<div class="state_head">Minnesota</div>
-							<div class="city_head"><a href="alexandria">Alexandria</a></div>
-							<div class="city_head"><a href="brainerd">Brainerd</a></div>
-							<div class="city_head"><a href="duluth">Duluth</a></div>
-							<div class="city_head"><a href="mankato">Mankato</a></div>
-							<div class="city_head"><a href="rochester">Rochester</a></div>
-							<div class="city_head"><a href="saintcloud">Saint Cloud</a></div>
-							<div class="city_head"><a href="twincities">Twin Cities</a></div>
-							<div class="city_head"><a href="willmar">Willmar</a></div>
-						</div>
-						<div class="col-md-3 state_block">
-						<div class="state_head">Wisconsin</div>
-							<div class="city_head"><a href="foxcities">Fox Cities</a></div>
-							<div class="city_head"><a href="greenbay">Green Bay</a></div>
-							<div class="city_head"><a href="manitowoc">Manitowoc</a></div>
-							<div class="city_head"><a href="manitowoc">Two Rivers</a></div>
+							<div class="state_head">South Dakota</div>
+							<div class="city_head"><a href="index.php?main_page=index&cPath=12396_17186">Rapid City</a></div>
+							<div class="city_head"><a href="index.php?main_page=index&cPath=2_6">Spearfish</a></div>
 						</div>
 					</div>
 				</div>
 				<div class="downloadapp">
-					<div class="state_head">Download Food Dudes App</div>
+					<div class="state_head">Download <?php echo SITE_NAME ?> App</div>
 					<div style="text-align:center">
 						<a href="https://itunes.apple.com/us/app/food-dudes/id1180442819?mt=8" target="_blank">
 						<img src="<?php echo DIR_WS_IMAGES.'/app_store.png'?>" alt="App Store" width="100%" style="max-width:170px" /></a>&nbsp;&nbsp;

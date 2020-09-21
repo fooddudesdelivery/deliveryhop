@@ -4,8 +4,8 @@
  * @created_by Jyoti Jain
  * @created_at 15 Sep, 2020
  */
-$publickey = _RECAPTCHA_SITE_KEY;
-$privatekey = _RECAPTCHA_SECRET_KEY;
+$publickey = RECAPTCHA_SITE_KEY;
+$privatekey = RECAPTCHA_SECRET_KEY;
 
 /**
  * Creates the challenge HTML.

@@ -18,7 +18,7 @@ var GoogleProcess =function(){
 				var script='';
 				script=document.createElement('script');
 				script.type='text/javascript';
-				script.src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCpKnNR28skIRA-s4e8Tm0BAq_ayapCE40&libraries=places,geometry&callback=goog.googleOnload';
+				script.src='https://maps.googleapis.com/maps/api/js?key='+GOOGLE_MAP_API_V3_KEY+'&libraries=places,geometry&callback=goog.googleOnload';
 				script.async='true';
 				document.getElementsByTagName('head')[0].appendChild(script);
 			}, 1);
@@ -454,12 +454,10 @@ var GoogleProcess =function(){
 	_this.getPage=function(){var params = window.get_params;var page; if((params.hasOwnProperty('cPath')) && _this.jsonToAssoc(params).indexOf('index') !==-1){page='cpath';}else{page=params['main_page'];}return page;};
 	_this.proceedRedirect=function(){
 		var page = _this.getPage();
-		var pathname= window.location.origin;
-
+		var pathname = SITE_URL;
 		if(!window.location.origin){
-			pathname= window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+			pathname = SITE_URL + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
 		}
-		console.log(window.location.origin);
 		if(page=='no_account'){
 			$('.no_acct_submit_btn').click();
 			return;

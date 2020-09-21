@@ -22,7 +22,6 @@
 //
 ?>
 <?php echo $payment_modules->javascript_validation(); ?>
-
 <div class="centerColumn" id="checkout">
 <?php  echo $_SESSION['new_billing_address'];?>
 <?php echo zen_draw_form('checkout_payment', $form_action_url, 'post', 'id="checkout_payment"'); ?>
@@ -30,11 +29,10 @@
 <?php if ($messageStack->size('redemptions') > 0) echo $messageStack->output('redemptions');$unsettip=true; ?>
 <?php if ($messageStack->size('checkout_shipping') > 0) echo $messageStack->output('checkout_shipping');$unsettip=true; ?>
 <?php if ($messageStack->size('checkout_payment') > 0) echo $messageStack->output('checkout_payment');$unsettip=true; ?>
-<?php  if($_SESSION['braintreestack']){
-echo '<div class="messageStack messageStackCaution larger xx">'.$_SESSION['braintreestack'].'</div>';
-unset($_SESSION['braintreestack']);	
-$unsettip=true;
-
+<?php if($_SESSION['braintreestack']){
+	echo '<div class="messageStack messageStackCaution larger xx">'.$_SESSION['braintreestack'].'</div>';
+	unset($_SESSION['braintreestack']);	
+	$unsettip=true;
 }
 
 if($unsettip){

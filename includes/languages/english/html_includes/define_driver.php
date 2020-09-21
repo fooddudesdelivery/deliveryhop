@@ -16,7 +16,7 @@ Earn up to $20/hr driving your car and choosing your hours</h4>
 <div id="style1">
 <?php if ($messageStack->size('driver') > 0) echo $messageStack->output('driver'); ?>
 <h4>What is Food Dudes?</h4>
-<p style="font-size:18px">Food Dudes Delivery is a restaurant delivery service with locations throughout the Midwest. We work with restaurant partners and deliver their food to homes, offices and hotels. Our website features online ordering and up-to-date restaurant menus.</p>
+<p style="font-size:18px"><?php echo SITE_NAME?> is a restaurant delivery service with locations throughout the Midwest. We work with restaurant partners and deliver their food to homes, offices and hotels. Our website features online ordering and up-to-date restaurant menus.</p>
 <br />
 <h4>Why Food Dudes?</h4>
 <p style="font-size:18px">Make up to $20/hr in delivery fees and tips. Driving with Food Dudes is a great way to earn money on your own schedule. Be your own boss. The more you drive, the more you earn. Whether you're looking for a part time gig or full time work, being a Food Dudes Driver Partner is a great opportunity for all.</p>

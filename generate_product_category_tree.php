@@ -3,31 +3,12 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include dirname(__FILE__) ."/db_config.php";
-
+include dirname(__FILE__) ."/includes/configure.php";
 date_default_timezone_set('America/Chicago');
-
 global $db_custom;
-
-$db_custom = new PDO("mysql:host="._DB_SERVER.";dbname="._DB_DATABASE, _DB_SERVER_USERNAME, _DB_SERVER_PASSWORD);
-
-//$db_custom = new PDO("mysql:host=".'192.168.1.11'.";dbname=".'dbfooddu_dev', 'dbfooddu_dev', 'jqMOEj#IdPKt');
-
+$db_custom = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_DATABASE, DB_SERVER_USERNAME, DB_SERVER_PASSWORD);
 if(isset($_GET['term']) && !empty($_GET['term'])){
 	global $db_custom;
-	//$10 Lunch : in Lunch - ID#13056
-	/*$qry   = " SELECT categories_id id, CONCAT (categories_name,' : in ', parent, ' - ID#', categories_id) label, CONCAT (categories_name,' : in ', parent, ' - ID#', categories_id) value";
-	$qry   .= " FROM (";
-	$qry  .= " SELECT distinct c.categories_id, cd.categories_name, ";
-	$qry  .= " (SELECT cd_.categories_name FROM categories c_ INNER JOIN categories_description cd_ ON (c_.parent_id=cd_.categories_id) WHERE c_.categories_id=c.categories_id) as parent";
-	$qry  .= " FROM categories c ";
-	$qry  .= " INNER JOIN categories_description cd   ON (   c.categories_id = cd.categories_id)";
-	$qry  .= " INNER JOIN products_to_categories ptoc ON (ptoc.categories_id = c.categories_id )";
-	$qry  .= " WHERE cd.language_id = '1' ";
-	$qry  .= " AND cd.categories_name like '".urldecode($_GET['term'])."%' ";
-	$qry  .= " ORDER BY cd.categories_name ";
-	$qry  .= " ) as t";*/
-
 	$qry = "SELECT t.*
 	FROM (
 		SELECT
@@ -73,9 +54,7 @@ if(isset($_GET['term']) && !empty($_GET['term'])){
 		}
 
 	$qry .= ") as t WHERE t.id IS NOT NULL LIMIT 0, 100";
-
 	$data = $db_custom->query($qry)->fetchAll(PDO::FETCH_ASSOC);
-
 	if(!empty($data)){
 		foreach($data as $key => $d){
 			$data[$key]['label'] = htmlspecialchars_decode(htmlspecialchars($data[$key]['label']));

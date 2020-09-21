@@ -5,7 +5,7 @@
 </style>
 <div style="min-height:380px">
 
-<p class="style1">Food Dudes Delivery is a restaurant delivery and marketing company. We work with restaurant partners and deliver their food to homes, offices and hotels. Our website features online ordering and up-to-date restaurant menus.</p>
+<p class="style1"><?php echo SITE_NAME?> is a restaurant delivery and marketing company. We work with restaurant partners and deliver their food to homes, offices and hotels. Our website features online ordering and up-to-date restaurant menus.</p>
 <!--
 <br />
 <h4>Catering &amp; Delivery </h4>

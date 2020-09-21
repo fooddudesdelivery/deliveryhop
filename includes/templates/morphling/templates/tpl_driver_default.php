@@ -84,7 +84,7 @@ $(document).ready(function(e) {
 
     setTimeout(function(){
 
-		window.location.replace("<?php echo HTTP_SERVER  ?>");
+		window.location.replace(SITE_URL);
 
 	},5000);
 
@@ -136,8 +136,7 @@ $(document).ready(function(e) {
 
     <legend>Driver Sign Up</legend>
 
-        <!-- <form action="https://staging.fooddudesdelivery.com/becomeadriver" method="post" > -->
-        <form action="<?php echo _SITE_FRONT_URL ?>/becomeadriver" method="post" >
+        <form action="index.php?main_page=driver" method="post" >
 
         	<input type='hidden' name='submit' value='driver_submit'>
 

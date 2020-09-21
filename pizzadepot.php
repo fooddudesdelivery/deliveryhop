@@ -30,7 +30,7 @@ if(isset($_GET['wokorder'])){
 	//die;
 	
 	//$finish=true;
-	header('Location: https://staging.fooddudesdelivery.com/pizzadepot.php?complete=1&id='.$_SESSION['new_id']);
+	header('Location: https://deliverhop.app/pizzadepot.php?complete=1&id='.$_SESSION['new_id']);
 	unset($_SESSION['new_id']);
 	die;
 }

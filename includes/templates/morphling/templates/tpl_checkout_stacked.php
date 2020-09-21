@@ -32,7 +32,7 @@ function submitFunction(jQuerygv,jQuerytotal) {
   jQuery('div#checkout form').attr({
     name: 'checkout_payment',
     onsubmit: 'return true;',
-    action: '<?php echo HTTPS_SERVER.'/index.php?main_page=fec_confirmation&fecaction=process';?>'
+    action: '<?php echo SITE_FRONT_URL.'/index.php?main_page=fec_confirmation&fecaction=process';?>'
   }); 
 }
 

@@ -1,0 +1,8 @@
+[23-Jun-2016 15:20:27 America/Chicago] PHP Warning:  require(client.inc.php): failed to open stream: No such file or directory in /home/deliverhop/public_html/support/apps/dispatcher.php on line 23
+[23-Jun-2016 15:20:27 America/Chicago] PHP Fatal error:  require(): Failed opening required 'client.inc.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/deliverhop/public_html/support/apps/dispatcher.php on line 23
+[23-Jun-2016 15:20:27 America/Chicago] PHP Warning:  require(client.inc.php): failed to open stream: No such file or directory in /home/deliverhop/public_html/support/apps/dispatcher.php on line 23
+[23-Jun-2016 15:20:27 America/Chicago] PHP Fatal error:  require(): Failed opening required 'client.inc.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/deliverhop/public_html/support/apps/dispatcher.php on line 23
+[23-Jun-2016 15:20:31 America/Chicago] PHP Warning:  require(client.inc.php): failed to open stream: No such file or directory in /home/deliverhop/public_html/support/apps/dispatcher.php on line 23
+[23-Jun-2016 15:20:31 America/Chicago] PHP Fatal error:  require(): Failed opening required 'client.inc.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/deliverhop/public_html/support/apps/dispatcher.php on line 23
+[23-Jun-2016 15:20:31 America/Chicago] PHP Warning:  require(client.inc.php): failed to open stream: No such file or directory in /home/deliverhop/public_html/support/apps/dispatcher.php on line 23
+[23-Jun-2016 15:20:31 America/Chicago] PHP Fatal error:  require(): Failed opening required 'client.inc.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/deliverhop/public_html/support/apps/dispatcher.php on line 23

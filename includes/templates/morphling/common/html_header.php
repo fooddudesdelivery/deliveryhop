@@ -187,11 +187,11 @@
 						window.goog = new GoogleProcess();
 						goog.initilize();
 					</script>
-					<script src='https://maps.googleapis.com/maps/api/js?key='+GOOGLE_MAP_API_V3_KEY+'&libraries=places,geometry&callback=goog.googleOnload' defer></script>
+					<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAP_API_V3_KEY?>&libraries=places,geometry&callback=goog.googleOnload" defer></script>
 				<?php
 				}else{
 				?>
-					<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $g_key ?>&libraries=places&callback=googleInit" defer></script>
+					<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAP_API_V3_KEY?>&libraries=places&callback=googleInit" defer></script>
 					<script type="text/javascript" src="https://open.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=iWtagMfwf2smjHAxHUbdNxJZHZgQdwGf" async></script>
 				<?php
 				}

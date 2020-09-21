@@ -71,8 +71,7 @@ require(DIR_WS_MODULES . zen_get_module_directory('footer.php'));
   <section class="footer-bottom">
     <div class="footer-inner container">
       <div class="copyright pull-left">
-        <p>&copy; <?php echo date('Y'); ?> Food Dudes Delivery, LLC
-		<?php //echo zen_decode_specialchars($data_themes['pt_footer_copyright'][$_SESSION['languages_id']]); ?></p>
+        <p>&copy; <?php echo date('Y'). ' ' . SITE_NAME; ?>, LLC</p>
       </div>
       <div class="widget-payment pull-right">
         <div class="payment-image"><img src="<?php echo $data_themes['pt_payment_available']; ?>" alt="" class="img-responsive"></div>

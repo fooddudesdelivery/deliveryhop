@@ -1,0 +1,1 @@
+[{"class":"ot_subtotal","value":"22.0000"},{"class":"ot_shipping","value":"3.0000"},{"class":"ot_tax","value":"1.7500"},{"class":"ot_tip","value":"5.0000"},{"class":"ot_total","value":"31.7500"}]

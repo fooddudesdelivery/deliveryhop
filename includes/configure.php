@@ -62,3 +62,33 @@ define('DB_DATABASE', 'fooddudes');
 // ie: /path/to/your/webspace/public_html/zen/cache   -- leave no trailing slash  
 define('SQL_CACHE_METHOD', 'none'); 
 define('DIR_FS_SQL_CACHE', 'D:/xampp/htdocs/deliveryhop/cache');
+define('SESSION_WRITE_DIRECTORY', 'D:/xampp/htdocs/deliveryhop/cache');
+
+/**
+ * ReCaptcha V2
+ * Account: fddevs@gmail.com Abc@1234 (Local)
+ */
+define('RECAPTCHA_SITE_KEY', '6LfDmcwZAAAAAJERAx62vlwSzl8uMPZtGPc6CsPS');
+define('RECAPTCHA_SECRET_KEY', '6LfDmcwZAAAAABNzwzeH2D9XdmqomE-G3Lte6ZH2');
+
+/**
+ * Google MAP API Key
+ */
+define('GOOGLE_MAP_API_V3_KEY', 'AIzaSyAb3ib6j9Vgl_XtfriXePpd4gyFSNY8rc4');
+
+define('AUTHOR_NAME', 'David Carlson');
+define('SITE_NAME', 'Deliver Hop');
+define('SITE_DOMAIN', 'deliverhop.app');
+define('SITE_FRONT_URL', HTTPS_SERVER.'/deliveryhop');
+define('SITE_ADMIN_URL', HTTPS_SERVER.'/fooddudesdelivery/aAsd23fadfAd2565Hccxz/');
+define('CORDOVA_URL', SITE_FRONT_URL.'/cordova/www/');
+define('SITE_TIMEZONE', 'America/Chicago');
+
+//https://itunes.apple.com/us/app/food-dudes/id1180442819?mt=8
+
+define('SERVICE_EMAIL', 'service@deliverhop.app');
+// How to handle this
+define('FAX_FROM', 'fax@deliverhop.app');
+// SMTP Credentials
+define('SMTP_EMAIL', 'deliverhopsdelivery2@gmail.com');
+define('SMTP_PASSWORD', 'deliverhops');

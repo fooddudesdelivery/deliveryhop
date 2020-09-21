@@ -1,17 +1,11 @@
 .index_bg { 
-  /*background: url(../../../../images/pepper/background_index.jpg) no-repeat center center fixed; */
-  background: url(../../../../images/pepper/webbanner_1500_600.png) no-repeat center center fixed; 
+  background: url(../../../../images/pepper/background_index.jpg) no-repeat center center fixed; 
   background-color:rgba(0, 0, 0, 0);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 600px;		 
-}
-@media only screen and (max-device-width: 768px){
-	.index_bg {
-		background: url(../../../../images/pepper/webbanner_415_500.png) no-repeat center center fixed;
-	}
 }
 .cart-add-button:focus {
 	outline:0;
@@ -780,7 +774,7 @@ text-align: center;
 }
 #search-btn-txt{
 	font-weight:700;
-	font-size:18px;	
+	font-size:18;	
 }
 
 .timecode-timepicker{
@@ -958,7 +952,6 @@ margin:0 auto;
 
 .index_bg {
 	height: 500px;
-	background: url(../../../../images/pepper/webbanner_1500_600.png) no-repeat center center fixed;
 }
 
 .overlap_text {
@@ -988,7 +981,6 @@ left:39%;
 }
 .index_bg {
 	height: 500px;
-	background: url(../../../../images/pepper/webbanner_1500_600.png) no-repeat center center fixed;
 }
 .overlap_text {
 	top:125px;
@@ -1014,7 +1006,6 @@ left:39%;
 	}
 .index_bg {
 	height: 500px;
-	background: url(../../../../images/pepper/webbanner_415_500.png) no-repeat center center fixed;
 }
 div.front-img-inner img{
 	height:450px !important;   
@@ -1106,7 +1097,6 @@ left:35%;
 }
 .index_bg {
 	height: 400px;
-	background: url(../../../../images/pepper/webbanner_415_500.png) no-repeat center center fixed;
 }
 
 	div.front-img-inner img{

@@ -16,6 +16,13 @@
 /**
  * inoculate against hack attempts which waste CPU cycles
  */
+ini_set('display_errors',true);
+ini_set('memory_limit', '-1');
+ini_set("log_errors", 1);
+error_reporting(E_ALL);
+
+setlocale(LC_MONETARY, 'en_US');
+
 $contaminated = (isset($_FILES['GLOBALS']) || isset($_REQUEST['GLOBALS'])) ? true : false;
 $paramsToAvoid = array('GLOBALS', '_COOKIE', '_ENV', '_FILES', '_GET', '_POST', '_REQUEST', '_SERVER', '_SESSION', 'HTTP_COOKIE_VARS', 'HTTP_ENV_VARS', 'HTTP_GET_VARS', 'HTTP_POST_VARS', 'HTTP_POST_FILES', 'HTTP_RAW_POST_DATA', 'HTTP_SERVER_VARS', 'HTTP_SESSION_VARS');
 $paramsToAvoid[] = 'autoLoadConfig';
@@ -76,6 +83,7 @@ if (file_exists('includes/local/configure.php')) {
  * boolean if true the autoloader scripts will be parsed and their output shown. For debugging purposes only.
  */
 define('DEBUG_AUTOLOAD', false);
+define('STRICT_ERROR_REPORTING', true);
 /**
  * set the level of error reporting
  *

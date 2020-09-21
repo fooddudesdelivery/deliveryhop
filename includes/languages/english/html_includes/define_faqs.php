@@ -378,7 +378,7 @@ Rewards points can be redeemed online for gift cards and more!   <a href="https:
 <h4>
 Can I use my restaurant coupon or gift card for delivery?</h4>
 <p class="style1">
-No, only Food Dudes Delivery coupons and promotions apply to delivery orders.  
+No, only <?php echo SITE_NAME?> coupons and promotions apply to delivery orders.  
 </p>
 <h4>
 How do I know my online order has been placed?</h4>

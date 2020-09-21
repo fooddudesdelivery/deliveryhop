@@ -1,7 +1,4 @@
 <?php
-
-include_once dirname(__FILE__) . '/db_config.php';
-
 require ('includes/application_top.php');
 // ajax receiving bank
 /* if(isset($_POST['set_tz'])){
@@ -20,13 +17,13 @@ if(isset($_POST['recalc_zip'])){
 	$db->Execute('update address_book set entry_zone_id ="'.$new_zone_id->fields['zone_id'].'" where address_book_id="'.$_SESSION['sendto'].'"' );
 	echo json_encode(array('done'=>1));
 }
-//isDomainAvailible('http://staging.fooddudesdelivery.com');
+//isDomainAvailible('http://deliverhop.app');
 function isDomainAvailible($domain)
        {
                //check, if a valid url is provided
                if(!filter_var($domain, FILTER_VALIDATE_URL))
                {
-					    mail(_DOMAIN_TEXT_EMAIL_ADDRESS_1, _DOMAIN_TEXT_EMAIL_SUBJECT, _DOMAIN_UNREACHABLE);
+					    mail('zachfagerness@gmail.com','WARNING','deliverhop.app is unreachable');
                }
 
                //initialize curl
@@ -44,11 +41,11 @@ function isDomainAvailible($domain)
                if ($response){
 
 			   }else{
-				   	/*mail('zachfagerness@gmail.com,zachf181@gmail.com,zach@staging.fooddudesdelivery.com','WARNING','staging.fooddudesdelivery.com is unreachable');
-				    mail('3203106216@tmomail.net','WARNING','staging.fooddudesdelivery.com is unreachable');*/
-				    mail(_DOMAIN_TEXT_EMAIL_ADDRESS_1.','._DOMAIN_TEXT_EMAIL_ADDRESS_2.','._DOMAIN_TEXT_EMAIL_ADDRESS_3,_DOMAIN_TEXT_EMAIL_SUBJECT,_DOMAIN_TEXT_UNREACHABLE);
-				    mail(_DOMAIN_TEXT_EMAIL_ADDRESS_4,_DOMAIN_TEXT_EMAIL_SUBJECT,_DOMAIN_TEXT_UNREACHABLE);
+				   	mail('zachfagerness@gmail.com,zachf181@gmail.com,zach@deliverhop.app','WARNING','deliverhop.app is unreachable');
+				    mail('3203106216@tmomail.net','WARNING','deliverhop.app is unreachable');
 			   }
+
+             
        }
 	   
 

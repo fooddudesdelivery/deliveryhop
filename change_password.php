@@ -70,10 +70,10 @@ if(isset($_GET['email'])){
 			$sql->Execute();
 			$html_msg['EMAIL_CUSTOMERS_NAME'] = $check['admin_name'];
 			$html_msg['EMAIL_MESSAGE_HTML'] = "A new password was requested from ".$_SERVER['REMOTE_ADDR'].".";
-			$html_msg['EMAIL_MESSAGE_HTML'] .= "<br/><br/>Your new password to 'Food Dudes Delivery' is:";
+			$html_msg['EMAIL_MESSAGE_HTML'] .= "<br/><br/>Your new password to ".SITE_NAME." is:";
 			$html_msg['EMAIL_MESSAGE_HTML'] .= "<br/><br/>".$new_password;
 			$html_msg['EMAIL_MESSAGE_HTML'] .= "<br/><br/>After you have logged in using the new password, you may change it by going to the 'Settings' area.";
-			$html_msg['EMAIL_MESSAGE_HTML'] .= "<br/>This email address was given to us by you or by one of our customers. If you feel that you have received this email in error, please send an email to service@fooddudesdelivery.com";
+			$html_msg['EMAIL_MESSAGE_HTML'] .= "<br/>This email address was given to us by you or by one of our customers. If you feel that you have received this email in error, please send an email to ".SERVICE_EMAIL;
 			$html_msg['EMAIL_MESSAGE_HTML'] .= "<br/><br/>This email is sent in accordance with the US CAN-SPAM Law in effect 01/01/2004. Removal requests can be sent to this address and will be honored and respected.";
 			$to = $email_address;
 			$subject = EMAIL_PASSWORD_REMINDER_SUBJECT;
@@ -86,8 +86,8 @@ if(isset($_GET['email'])){
 			ini_set("sendmail_from",EMAIL_FROM);
 			$mail->Host = "ssl://smtp.gmail.com";  // Specify main and backup SMTP servers
 			$mail->SMTPAuth = true ;                              // Enable SMTP authentication
-			$mail->Username = 'fooddudesdelivery2@gmail.com';                 // SMTP username
-			$mail->Password = 'fooddudes';                          // SMTP password
+			$mail->Username = SMTP_EMAIL;                 // SMTP username
+			$mail->Password = SMTP_PASSWORD;                          // SMTP password
 			$mail->SMTPSecure = false ;                         // Enable TLS encryption, `ssl` also accepted
 			$mail->Port = 465;                                    // TCP port to connect to
 			$mail->setFrom(EMAIL_FROM, STORE_NAME, 0);
@@ -96,7 +96,7 @@ if(isset($_GET['email'])){
 			$mail->isHTML(true); // Set email format to HTML
 			$mail->Subject = $subject;
 			$mail->Body    = $txt;
-			$mail->AltBody = 'Fooddude';
+			$mail->AltBody = SITE_NAME;
 			if(!$mail->send()) {
 				$out = array('success'=>false,'message'=>"Not able to sent email.");
 				//echo 'Mailer Error: ' . $mail->ErrorInfo;

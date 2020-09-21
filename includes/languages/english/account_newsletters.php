@@ -9,12 +9,9 @@
 
 define('NAVBAR_TITLE_1', 'My Account');
 define('NAVBAR_TITLE_2', 'Subscriptions');
-
 define('HEADING_TITLE', 'Subscriptions');
-
 define('MY_NEWSLETTERS_TITLE', 'My Subscriptions');
 define('MY_NEWSLETTERS_GENERAL_NEWSLETTER', 'General Promotions');
-define('MY_NEWSLETTERS_GENERAL_NEWSLETTER_DESCRIPTION', 'Yes, I would like to receive email and text promotions from Food Dudes Delivery.');
-
+define('MY_NEWSLETTERS_GENERAL_NEWSLETTER_DESCRIPTION', 'Yes, I would like to receive email and text promotions from '.SITE_NAME.'.');
 define('SUCCESS_NEWSLETTER_UPDATED', 'Your subscriptions have been updated.');
 ?>

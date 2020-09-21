@@ -1,0 +1,25 @@
+## BEGIN CEON URI MAPPING REWRITE RULE
+
+RewriteEngine On
+
+RewriteBase /deliveryhop
+# ONLY rewrite URIs beginning with /deliveryhop/
+RewriteCond %{REQUEST_URI} ^deliveryhop/ [NC]
+
+# Don't rewrite any URIs ending with a file extension (ending with .[xxxxx])
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z]{2,5}$ [OR]
+RewriteCond %{REQUEST_URI} \.(html)$ [NC]
+
+# Don't rewrite any URIs for some specific file format extensions,
+#   which are not covered by main file extension condition above
+#   Uncomment the following line to apply this condition! (Remove the # at the start of the next line)
+RewriteCond %{REQUEST_URI} !\.(3gp|3g2|h261|h263|mj2|mjp2|mp4v|mpg4|m1v|m2v|m4u|f4v|m4v|3dml)$ [NC]
+
+# Don't rewrite admin directory
+RewriteCond %{REQUEST_URI} !^deliveryhop/admin_test [NC]
+
+# Don't rewrite editors directory
+RewriteCond %{REQUEST_URI} !^deliveryhop/editors/ [NC]
+
+# Handle all other URIs using Zen Cart (its index.php)
+RewriteRule .* deliveryhop/index.php [QSA,L]

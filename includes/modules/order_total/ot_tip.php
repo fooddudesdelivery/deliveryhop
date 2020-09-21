@@ -45,7 +45,8 @@
 			$_SESSION['add_tip']=0;
 		}
         if (isset($_SESSION['add_tip'])) {
-		$_SESSION['add_tip'] = money_format('%i',$_SESSION['add_tip']);
+          $fmt = new NumberFormatter('en_US', NumberFormatter::CURRENCY);
+		      $_SESSION['add_tip'] = $fmt->formatCurrency($_SESSION['add_tip'], "USD");
           $order->info['total'] += $_SESSION['add_tip'];
 		   
 		  $this->output[] = array('title' => $this->title . ':',

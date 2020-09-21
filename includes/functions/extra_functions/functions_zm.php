@@ -142,6 +142,7 @@ function orderGeneratePizzaDepot($post){
 		$class_array=array('ot_subtotal','ot_shipping','ot_tax','ot_tip','ot_total');
 		$title_array=array('Subtotal:','Delivery:','Sales Tax:','Gratuity:','Total:');
 		$sort_array=array(100,200,351,800,999);
+		echo 'ABC'; exit;
 		for($i=0;$i<count($value_array);$i++){
 		  $orders_total="
 		  INSERT INTO orders_total

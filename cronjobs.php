@@ -8,11 +8,10 @@
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version GIT: $Id: Author: Ian Wilson   New in v1.5.4 $
  */
-include_once dirname(__FILE__) . '/db_config.php';
 require ('includes/configure.php');
 global $db;
 date_default_timezone_set('America/Chicago');
-$db = new PDO("mysql:host="._DB_SERVER.";dbname="._DB_DATABASE, _DB_SERVER_USERNAME, _DB_SERVER_PASSWORD);
+$db = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_DATABASE, DB_SERVER_USERNAME, DB_SERVER_PASSWORD);
 /*
   1. Find orders that are in new status, not a pickup order, delivery date must match current date, and order must have timestamp of 2 min or greater from time when order was placed
   2. Check to see if order has been suggested to a driver if so determine if the order should be send to the suggested driver. Order can be sent to suggested driver if driver is on 0 orders or on 1 order and in picked up status
@@ -56,17 +55,6 @@ if(isset($_GET['type']) && $_GET['type']=='autodispatch'){
       }
     }
   }
-  // foreach ($suggestedOrders as $key => $order) {
-  //   writeRequestResponseLog('order-'.$order['orders_id']);
-  //   //$flg=checkorderexist($order['suggested_admin'], $order['categories_id']);
-  //   $flg=checkorderexist($order['suggested_admin'],1);
-  //   writeRequestResponseLog('suggested $flg id   -'.$flg);
-  //   if($flg){
-  //     $driverId = $order['suggested_admin'];
-  //     dispatchOrderSuggested($order['orders_id'],$driverId);
-  //     writeRequestResponseLog('suggested dispatch to -'.$driverId);
-  //   }   
-  // }
   $orders = $db->query("SELECT * FROM orders WHERE 
       orders_status = '1' 
       AND date_deliver > '".$today." 00:00:00'
@@ -84,8 +72,7 @@ if(isset($_GET['type']) && $_GET['type']=='autodispatch'){
       $category = $db->query("SELECT * FROM categories c, categories_description cd WHERE c.categories_id = '".$categoryId."' AND cd.categories_id = c.categories_id")->fetch(PDO::FETCH_ASSOC);
       writeRequestResponseLog($category);
     // no cash flag
-    $cod_flag = ($order["payment_module_code"] == "cod" )?" AND no_cash_flag='0' ":"";    
-    //var_dump($cod_flag);
+    $cod_flag = ($order["payment_module_code"] == "cod" )?" AND no_cash_flag='0' ":"";
       $adminList = $db->query("SELECT * FROM admin WHERE 
           categories_id = '".$category['parent_id']."'
           AND admin_status = 1 ".$cod_flag."")->fetchAll(PDO::FETCH_ASSOC);
@@ -156,7 +143,7 @@ function checkPickupOrder($admin_id){
         orders_admin_id = '".$admin_id."'
         AND orders_status != '10' AND last_modified > '".$today." 00:00:00'
         AND last_modified < '".$today." 23:59:00'
-        ORDER BY last_modified DESC        
+        ORDER BY last_modified DESC
       ")->fetchAll(PDO::FETCH_ASSOC);
     $flg=0;
     if(empty($conditionOne)){ // 0 order
@@ -164,9 +151,9 @@ function checkPickupOrder($admin_id){
     }else{
       foreach ($conditionOne as $key => $value) {
         if($value['orders_status']==8){ // 1 order in picked up status
-          $flg=1;  
+          $flg=1;
         }else{
-          $flg=0;  
+          $flg=0;
           break;
         }
       }
@@ -180,7 +167,7 @@ function checkorderWithoutpickup($admin_id){
       orders_admin_id = '".$admin_id."'
       AND orders_status != '10' AND last_modified > '".$today." 00:00:00'
       AND last_modified < '".$today." 23:59:00'
-      ORDER BY last_modified DESC        
+      ORDER BY last_modified DESC
     ")->fetchAll(PDO::FETCH_ASSOC);
   writeRequestResponseLog('checkorderexist');
   writeRequestResponseLog($conditionOne );
@@ -193,7 +180,7 @@ function checkorderWithoutpickup($admin_id){
     $npick = 0;
     foreach ($conditionOne as $key => $value) {
       if($value['orders_status']==8){ // 1 order in picked up status
-        $pOrder = $pOrder+1;  
+        $pOrder = $pOrder+1;
         $npick=1;
       }else{
         //$flg=0;  
@@ -286,11 +273,10 @@ function sendNotification($orderId, $driverId){
   $driver_sql = $db->query("SELECT admin_id,admin_email,admin_phone,admin_phone_extension from admin where admin_id='".$driverId."'")->fetch(PDO::FETCH_ASSOC);
   $email_address=$driver_sql['admin_email'];
   $phone_email = $driver_sql['admin_phone'].$driver_sql['admin_phone_extension'];
-  //$email_message = "<a href ='https://staging.fooddudesdelivery.com/aAsd23fadfAd2565Hccxz/driver_index.php'>Click to Accept Food Dudes Order #".$orderId."</a> "."<br /> ";
-  $email_message = "<a href ='"._SITE_ADMIN_URL."driver_index.php'>Click to Accept Food Dudes Order #".$orderId."</a> "."<br /> ";
+  $email_message = "<a href ='".SITE_ADMIN_URL."driver_index.php'>Click to Accept ".SITE_NAME." Order #".$orderId."</a> "."<br /> ";
   $phone_message = "New Order #".$orderId;
-  $subject ="Food Dudes Delivery";
-  send_email($email_address,$subject,$email_message,$orderId);  
+  $subject =SITE_NAME;
+  send_email($email_address, $subject, $email_message, $orderId);
   send_text($phone_email,$phone_message,$subject);
 }
 function send_text($email,$message,$subject ){
@@ -316,7 +302,6 @@ function send_email($email_to,$subject,$message,$orders_id){
   writeRequestResponseLog( 'send_email');
   $headers  = 'MIME-Version: 1.0' . "\r\n";
   $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-  //$param = '-f '.'service@staging.fooddudesdelivery.com';
   $param = '-f '._SERVICE_EMAIL;
   $sent = mail($email_to, $subject, $message,$headers,$param);
   writeRequestResponseLog('send_email -'.$email_to.$subject.$message.$headers.$param);
@@ -401,8 +386,7 @@ function driverAppNotify($admin_id,$message,$type = 'dispatch'){
     return;
   }
   $send =  json_encode(array('key' => 'notify','params'=>array('admin_id'=>$admin_id,'message'=>$message,'type'=>$type)));
-  //$ch = curl_init('https://staging.fooddudesdelivery.com:3335/dispatch');
-  $ch = curl_init(_SITE_FRONT_URL.':3335/dispatch');
+  $ch = curl_init(SITE_FRONT_URL.':3335/dispatch');
   curl_setopt($ch,CURLOPT_POST, 1);
   curl_setopt($ch,CURLOPT_POSTFIELDS,$send);
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -426,8 +410,7 @@ function sendDriverAppNewOrder($orders_id,$admin_id){
     return;
   }
   $send =  json_encode(array('key' => 'new_order','params'=>array('admin_id'=>$admin_id,'orders_id'=>$orders_id)));
-  //$ch = curl_init('https://staging.fooddudesdelivery.com:3335/dispatch');
-  $ch = curl_init(_SITE_FRONT_URL.':3335/dispatch');
+  $ch = curl_init(SITE_FRONT_URL.':3335/dispatch');
   curl_setopt($ch,CURLOPT_POST, 1);
   curl_setopt($ch,CURLOPT_POSTFIELDS,$send);
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -678,7 +661,6 @@ if(isset($_GET['type']) && $_GET['type']=='set_future_to_new'){
   foreach($future as $rr){
     $tz_list[]=$rr['parent_id'];
   }
-     //print_r($tz_list);
   if(count($tz_list)>0){
     $sqff = 'select categories_id, timezone from categories_description where categories_id in ('.implode($tz_list,',').')';
     $tz_grap = $db->query($sqff)->fetchAll(PDO::FETCH_ASSOC);
@@ -691,8 +673,7 @@ if(isset($_GET['type']) && $_GET['type']=='set_future_to_new'){
       }
     }
   }
-    //print_r($future);
-    $email_msg='';
+  $email_msg='';
   if(count($future)>0){
     for($t=0;$t<count($future);$t++){
       switch($future[$t]['timezone']){
@@ -721,15 +702,11 @@ if(isset($_GET['type']) && $_GET['type']=='set_future_to_new'){
       $current = date("Y-m-d H:i:s", strtotime("+".$future_change_limit." minutes"));
       $delevery = date($future[$t]['date_deliver']);
       if($delevery<=$current){
-      //if((int)$future_change_limit<(int)$future_difference){
-          $output ='FUTURE '.$future[$t]['orders_id'].' DIFFERENCE:'.$future_difference.' LIMIT:'.$future_change_limit.' '.$future[$t]['date_deliver'].' '.$future_time;
-        if($db->query('update orders set orders_status = 1,last_modified ="'.date('Y-m-d H:i:s',strtotime('now')).'",updated_from_future=1 where orders_id='.$future[$t]['orders_id']))
-        {
+        $output ='FUTURE '.$future[$t]['orders_id'].' DIFFERENCE:'.$future_difference.' LIMIT:'.$future_change_limit.' '.$future[$t]['date_deliver'].' '.$future_time;
+        if($db->query('update orders set orders_status = 1,last_modified ="'.date('Y-m-d H:i:s',strtotime('now')).'",updated_from_future=1 where orders_id='.$future[$t]['orders_id'])){
           writeRequestResponseLog($output);
           updateOrdersTrue(9,$future[$t]['orders_id'],1);
-          if($db->query('insert into orders_status_history (orders_id,orders_status_id,date_added,updated_by) values('.$future[$t]['orders_id'].',1,"'.date('Y-m-d H:i:s',strtotime('now')).'","MAT-CRON")'))       
-          {
-          }
+          if($db->query('insert into orders_status_history (orders_id,orders_status_id,date_added,updated_by) values('.$future[$t]['orders_id'].',1,"'.date('Y-m-d H:i:s',strtotime('now')).'","MAT-CRON")')){}
         }
       }
     } 
@@ -741,11 +718,9 @@ if(isset($_GET['type']) && $_GET['type']=='set_order_to_complete'){
   $db->query("UPDATE orders SET orders_status='13', last_modified = now() WHERE 
       orders_status = '4'
       AND pickup_order = '1' 
-      AND last_modified <= '".$lastModify ."'   
-      ");
+      AND last_modified <= '".$lastModify ."'");
 }
 if(isset($_GET['type']) && $_GET['type']=='set_place_zuppler_pickup_order'){
-//echo "12345";
   global $db; 
   $today = date('Y-m-d');
   $sql ="SELECT orders_id, categories_id from orders WHERE 
@@ -753,14 +728,9 @@ if(isset($_GET['type']) && $_GET['type']=='set_place_zuppler_pickup_order'){
       AND date_deliver > '".$today." 00:00:00'
       AND date_deliver < '".$today." 23:59:00'
       AND online_order = '0' 
-      AND pickup_order = '1'
-      ";
-  echo $sql; 
+      AND pickup_order = '1'";
   $orders= $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-   foreach ($orders as $key => $order) {
-    echo "<br /><pre>";
-    print_r($order);
-
+  foreach($orders as $key => $order){
       $db->query("UPDATE orders SET orders_status='2', last_modified = now() WHERE orders_id = '".$order['orders_id']."'");
       $db->query('insert into orders_status_history (orders_id,orders_status_id,date_added,updated_by) values  ('.$order['orders_id'].',2,now(),"'.get_admin_name(1).'")');
       updateOrdersTrueHistory('1',$order['orders_id'],2);
@@ -768,38 +738,31 @@ if(isset($_GET['type']) && $_GET['type']=='set_place_zuppler_pickup_order'){
     }
   }
 function sendPushSetPlaceZupplerPickupOrder($orders_id, $category_id, $push=array('key'=>'syncOrder','params'=>true), $db){
-echo "Here i am 90";
   $check_category_query1 = "SELECT * FROM categories_description WHERE categories_id = ".$category_id;
   $category_check = $db->query($check_category_query1)->fetchAll(PDO::FETCH_ASSOC);
-   // echo "<pre>";
-//echo '<pre>'; print_r($category_check); echo '</pre>';
- if(!empty($category_check) && !empty($category_check[0]['send_method_code']) && $category_check[0]['send_method_code'][4] == 1){
+  if(!empty($category_check) && !empty($category_check[0]['send_method_code']) && $category_check[0]['send_method_code'][4] == 1){
       $push_sql="SELECT device_id FROM push_info AS p inner join orders AS o ON o.categories_id = p.categories_id WHERE o.orders_id = $orders_id AND last_info_json!='loggedoff'";
       $push_infotmp= $db->query($push_sql)->fetchAll(PDO::FETCH_ASSOC);
- //    echo '<pre>'; print_r($push_infotmp); echo '</pre>';
     if(!$push_infotmp){
         return false;
       }
-   //   $push_info=array_values($push_infotmp);
       $push_infotmp=array_values($push_infotmp);
       $push_info=[];
       foreach($push_infotmp as $innekey => $devicevalue){
           $push_info[] = $devicevalue['device_id'];
       }
-      $apiKey = '579fe3f9ac99145d7bf6a548878bdc97e8fa798b8684aaaf52b97333821c2e77';
-      //$apiKey = '3026898fd3da6ace6630a07073050abb7a4420dd9aae62d4d78a518a632f84ed';
-      $apiKey = 'fcf2a3c898f6d794d66da23d3409f0e0c22f8e493fba3f45b45a4a7f60f86d0c'; //com.food_dude
-      $apiKey = '177265edf4083eb47be5941dea1ebf0a860124a40176834243fc848f15f623db'; //staging_restaurant
+      $apiKey = '579fe3f9ac99145d7bf6a548878bdc97e8fa798b8684aaaf52b97333821c2e77'; // Dev
+      //$apiKey = 'fcf2a3c898f6d794d66da23d3409f0e0c22f8e493fba3f45b45a4a7f60f86d0c'; //com.food_dude
+      //$apiKey = '177265edf4083eb47be5941dea1ebf0a860124a40176834243fc848f15f623db'; //staging_restaurant
+      //$apiKey = 'c41a0766e45072a2897720ddbb13fe877e28847f7f958621ce4f46df35d80b0a'; // Live
       $url = 'https://api.pushy.me/push?api_key=' . $apiKey;
-      $post = array
-      (
+      $post = array(
         'registration_ids'  => $push_info,
         'data'              => array(
             'json_link'=>json_encode($push),
-              "title" => "Food Dudes Delivery", // Notification title
+              "title" => SITE_NAME, // Notification title
               "message" => "Hello, Please accept order number ".$orders_id, // Notification body text
-              //"url" => "https://staging.fooddudesdelivery.com" // Opens when clicked
-              "url" => _SITE_FRONT_URL // Opens when clicked
+              "url" => SITE_FRONT_URL // Opens when clicked
             ),
           "notification"=> array(
               "body"=> "Hello, Please accept order number ".$orders_id,
@@ -816,15 +779,13 @@ echo "Here i am 90";
       curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
       curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode( $post ) );
       $result = curl_exec( $ch );
-      echo "<br /> <pre>";
-      print_r($result);
       if(curl_errno($ch)){
         return false; 
       }
       curl_close( $ch );
   }
   $ch = curl_init();
-  curl_setopt( $ch, CURLOPT_URL, _SITE_FRONT_URL.'/zupler_order_mail.php?order_id='.$orders_id );
+  curl_setopt( $ch, CURLOPT_URL, SITE_FRONT_URL.'/zupler_order_mail.php?order_id='.$orders_id );
   curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
   $result = curl_exec( $ch );
   curl_close( $ch );
@@ -844,20 +805,19 @@ function sendPush($orders_id,$push=array('key'=>'syncOrder','params'=>true)){
   foreach($push_info as $value){
     $push_infonew[]=$value['device_id'];
   }
-  $apiKey = '579fe3f9ac99145d7bf6a548878bdc97e8fa798b8684aaaf52b97333821c2e77'; //Live server
+  //$apiKey = '579fe3f9ac99145d7bf6a548878bdc97e8fa798b8684aaaf52b97333821c2e77'; //Live server
   //$apiKey = 'bb3cc6dfc39536504a013208810eb2c2b774cc39657c2b114805ae827e1e29db'; //Test server
-  $apiKey = 'fcf2a3c898f6d794d66da23d3409f0e0c22f8e493fba3f45b45a4a7f60f86d0c'; //com.food_dude
-  $apiKey = '177265edf4083eb47be5941dea1ebf0a860124a40176834243fc848f15f623db'; //staging_restaurant
+  //$apiKey = 'fcf2a3c898f6d794d66da23d3409f0e0c22f8e493fba3f45b45a4a7f60f86d0c'; //com.food_dude
+  //$apiKey = '177265edf4083eb47be5941dea1ebf0a860124a40176834243fc848f15f623db'; //staging_restaurant
+  $apiKey = 'c41a0766e45072a2897720ddbb13fe877e28847f7f958621ce4f46df35d80b0a'; // Delivery hop
   $url = 'https://api.pushy.me/push?api_key=' . $apiKey;
-  $post = array
-  (
+  $post = array(
     'registration_ids'  => $push_infonew,
     'data'              => array(
          'json_link'=>json_encode($push),
           "title" => "Fooddudes Delivery", // Notification title
           "message" => "Hello, Please accept order number ".$orders_id, // Notification body text
-          //"url" => "https://staging.fooddudesdelivery.com" // Opens when clicked
-          "url" => _SITE_FRONT_URL // Opens when clicked
+          "url" => SITE_FRONT_URL // Opens when clicked
         ),
       "notification"=> array(
           "body"=> "Hello, Please accept order number ".$orders_id,
@@ -894,27 +854,21 @@ if(isset($_GET['type']) && $_GET['type']=='set_zuppler_order_to_complete'){
       AND zuppler_id !='0'
       AND last_modified >= '".$lastModify ."'";
   $orders= $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-  //echo '<pr>';
-  //print_r($orders);
   foreach ($orders as $key => $order) {    
     zupplerOrderUpdateStatus($order['orders_id'],13);
   }
 }
 function zupplerOrderUpdateStatus($order_id=0,$order_status=0){
-      global $db;
+  global $db;
   $order_s = 'SELECT zuppler_order_uid, payment_module_code, shipping_method FROM orders WHERE orders_id =' . (int)$order_id;
   $order_data =  $db->query($order_s)->fetch(PDO::FETCH_ASSOC);     
-  //echo '<pr>';
-  //print_r($order_data);
   if(!empty($order_data['zuppler_order_uid'])){
     $url = 'https://posaas.zuppler.com/webhooks/update_status';
-      $post = array
-      (
-          'zuppler_order_uid'  => $order_data['zuppler_order_uid'],
-          'order_status'  => (int)$order_status
+      $post = array(
+        'zuppler_order_uid'  => $order_data['zuppler_order_uid'],
+        'order_status'  => (int)$order_status
       );
-      $headers = array
-      (
+      $headers = array(
         "authorization: Basic ".base64_encode("9ZzTdUmesPcL6:K#9kwswgX&zENWgr0$7CLhW27"),
         "cache-control: no-cache",
         "Content-Type: application/json"
@@ -977,32 +931,29 @@ if(isset($_GET['type']) && $_GET['type']=='set_restaurant_app_status'){
         $db->query("UPDATE categories set categories_status_app='1', categories_status='1' Where categories_status_app='0' AND categories_id='".$cat['categories_id']."'");
     }
 }
-/* Update Restaurant Status  24 Hours*/
-/* Update Restaurant Status On Zuppler*/
+/* Update Restaurant Status On Zuppler in 24 Hours*/
 function zuppler_update_restaurant_status($postData=array()){
-    $url = 'http://posaas.zuppler.com/webhooks/sync'; //Live
-    $url = "http://posaas.biznettechnologies.com/webhooks/sync"; //dev
-    $post = $postData;
+  //$url = 'http://posaas.zuppler.com/webhooks/sync'; //Live
+  $url = "http://posaas.biznettechnologies.com/webhooks/sync"; //dev  
+  $post = $postData;  
+  $headers = array( 
+    //"authorization: Basic ".base64_encode("9ZzTdUmesPcL6:K#9kwswgX&zENWgr0$7CLhW27"), // Live
+    'Authorization: Basic '.base64_encode("Zuppler:ZupplerSecure@2019"), // Local
+    "cache-control: no-cache",  
+    "Content-Type: application/json"  
+  );
 
-    $headers = array(
-        //Un-Comment For Live
-        //"authorization: Basic ".base64_encode("9ZzTdUmesPcL6:K#9kwswgX&zENWgr0$7CLhW27"), //Live
-        'Authorization: Basic '.base64_encode("Zuppler:ZupplerSecure@2019"),
-        "cache-control: no-cache",
-        "Content-Type: application/json"
-    );
-    
-    $ch = curl_init();
-    curl_setopt( $ch, CURLOPT_URL, $url );
-    curl_setopt( $ch, CURLOPT_POST, true );
-    curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers );
-    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-    curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode( $post ) );
-    $result = curl_exec( $ch );
+  $ch = curl_init();
+  curl_setopt( $ch, CURLOPT_URL, $url );
+  curl_setopt( $ch, CURLOPT_POST, true );
+  curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers );
+  curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+  curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode( $post ) );
+  $result = curl_exec( $ch );
 
-    if(curl_errno($ch)){
-        $zupplerError = curl_error( $ch );
-    }
-    curl_close( $ch );
+  if(curl_errno($ch)){
+      $zupplerError = curl_error( $ch );
+  }
+  curl_close( $ch );
 }
 /* Update Restaurant Status On Zuppler*/
